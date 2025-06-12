@@ -1,0 +1,14 @@
+C:\Users\mikul\Desktop\zaverecnyProjekt\Cukrovi\bin\Debug\net9.0\Cukrovi.exe
+C:\Users\mikul\Desktop\zaverecnyProjekt\Cukrovi\bin\Debug\net9.0\Cukrovi.deps.json
+C:\Users\mikul\Desktop\zaverecnyProjekt\Cukrovi\bin\Debug\net9.0\Cukrovi.runtimeconfig.json
+C:\Users\mikul\Desktop\zaverecnyProjekt\Cukrovi\bin\Debug\net9.0\Cukrovi.dll
+C:\Users\mikul\Desktop\zaverecnyProjekt\Cukrovi\bin\Debug\net9.0\Cukrovi.pdb
+C:\Users\mikul\Desktop\zaverecnyProjekt\Cukrovi\obj\Debug\net9.0\Cukrovi.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\mikul\Desktop\zaverecnyProjekt\Cukrovi\obj\Debug\net9.0\Cukrovi.AssemblyInfoInputs.cache
+C:\Users\mikul\Desktop\zaverecnyProjekt\Cukrovi\obj\Debug\net9.0\Cukrovi.AssemblyInfo.cs
+C:\Users\mikul\Desktop\zaverecnyProjekt\Cukrovi\obj\Debug\net9.0\Cukrovi.csproj.CoreCompileInputs.cache
+C:\Users\mikul\Desktop\zaverecnyProjekt\Cukrovi\obj\Debug\net9.0\Cukrovi.dll
+C:\Users\mikul\Desktop\zaverecnyProjekt\Cukrovi\obj\Debug\net9.0\refint\Cukrovi.dll
+C:\Users\mikul\Desktop\zaverecnyProjekt\Cukrovi\obj\Debug\net9.0\Cukrovi.pdb
+C:\Users\mikul\Desktop\zaverecnyProjekt\Cukrovi\obj\Debug\net9.0\Cukrovi.genruntimeconfig.cache
+C:\Users\mikul\Desktop\zaverecnyProjekt\Cukrovi\obj\Debug\net9.0\ref\Cukrovi.dll
