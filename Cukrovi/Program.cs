@@ -8,11 +8,12 @@ class Program
     {
         string pomlcky = new string('-', 20);
         Console.WriteLine(pomlcky + "ZAVERECNY PROJEKT" + pomlcky);
-        Console.WriteLine("Uzivateli, zdej sve jmeno:");
+        Console.WriteLine("Uzivateli, zadej sve jmeno:");
         string jmeno = Console.ReadLine();
         DateTime stedryDen = new DateTime(2025, 12, 24);
         TimeSpan pocetDniDoVanoc = stedryDen - DateTime.Now;
-        Console.WriteLine($"Ahoj {jmeno}, do Vanoc zbyva {pocetDniDoVanoc.Days} dni.");
+        Console.WriteLine($"Ahoj {jmeno}, do Vanoc zbyva {pocetDniDoVanoc.Days} dni. Je cas zacit pect cukrovi.");
+
         Console.WriteLine("Vyber akci:");
         Console.WriteLine("1-zobrazit recepty");
         Console.WriteLine("2-zobrazit zasoby");
@@ -31,6 +32,7 @@ class Program
                     {
                         case "1":
                             {
+                                VanilkoveRohlicky.VypisRecept();
                                 break;
                             }
                         case "2":
@@ -52,6 +54,8 @@ class Program
                 }
             case "2":
                 {
+                    Console.WriteLine("Mate doma tyto suroviny:");
+                    //SkladZasob.VypisZasoby();
                     break;
                     }
 
