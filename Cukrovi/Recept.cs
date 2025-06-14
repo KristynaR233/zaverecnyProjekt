@@ -13,13 +13,20 @@ public class Recept
         Nazev = nazev;
         Suroviny = suroviny;
         Postup = postup;
+    
+        
     }
     
     public void VypisRecept()
     {
-        Console.WriteLine($"{Nazev}");
-        Console.WriteLine($"Seznam suroviny: {Suroviny.Split(",")}");
-        Console.WriteLine($"Postup: {Postup}");
+        Console.WriteLine($"**{Nazev}**");
+        Console.WriteLine($"Seznam surovin: {Suroviny.Split(",")}");
+        List<string> postupVRadkach = Postup.Split(".").ToList();
+        foreach (string polozka in postupVRadkach)
+        {
+            Console.WriteLine($"- {polozka}.");
+        }
+        
 
 
     }

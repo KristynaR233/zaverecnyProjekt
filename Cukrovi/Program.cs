@@ -28,19 +28,19 @@ class Program
         (
             "Muslicky s orechovou naplni",
             "250 g masla, 250 g cukr moucka, 250 g hladka mouka, 2 vejce, 100 g mletych orechu,  ", 
-            "Smichat mouku, maslo, 1 vejce a 1 lzici vody a vypracuj hladke testo. Nech odpocinout v lednici. Na napln smichat mlete orechy, 100g mouckoveho cukru a 1 vejce. Predehrat troubu na 180 stupnu. Z testa vyvalet plat cca 2 mm silny a vykrajet kolecka. Na kazde kolecko dat trochu naplne a prelozit napul. Muslicky prenest na plech a pect cca 10 minut do svetle zlate barvy. Jeste horke obalit v mouckovem cukru."
+            "Smichat mouku, maslo, 1 vejce a 1 lzici vody a vypracovat hladke testo. Nechat odpocinout v lednici. Na napln smichat mlete orechy, 100g mouckoveho cukru a 1 vejce. Predehrat troubu na 180 stupnu. Z testa vyvalet plat cca 2 mm silny a vykrajet kolecka. Na kazde kolecko dat trochu naplne a prelozit napul. Muslicky prenest na plech a pect cca 10 minut do svetle zlate barvy. Jeste horke obalit v mouckovem cukru."
 
         );
         Recept pracny = new Recept
         ( "Pracny",
             "225 g masla, 70 g cukr moucka, 225 g hladka mouka, 50 g mletych orechu, 2 hrebicky, 0.5 lzicky skorice, 0.5 lzice kakaa",
-            "Prisady zpracovat na pevne testo a polovinu obarvit kakaem. Nechat odpocinout v lednicce.Troubu predehrat na 170 stupnu.  Potom vytlacit do formicek. Pest zhruba 5-7 minut. Po upeceni vyklepnout z formicek."
+            "Prisady zpracovat na pevne testo a polovinu obarvit kakaem. Nechat odpocinout v lednicce. Troubu predehrat na 170 stupnu. Potom vytlacit do formicek. Pect zhruba 5-7 minut. Po upeceni vyklepnout z formicek."
 
         );
         Recept vanilkoveRohlicky = new Recept
         (   "Vanilkove rohlicky",
             "170 g masla, 50 g cukr moucka, 210 g hladka mouka, 80 g vlaskych orechu, 20 g vanilkovy cukr ",
-            "Vychlazene maslo nakrajet na kosticky, pridat ostatni suroviny a vypracovat pevne testo. Testo nechat odpocivat v lednicce. Pote z testa vyvylet silny valecek, nakrajet ho na kousky a ty potom tvarovat jako rohlicky. Troubu predehrat na 180 stupnu. Rohlicky pect 12-15 minut. Po upeceni nechat kratce zchladnout a pote je obalit ve smesi mouckoveho a vanilkoveho cukru."
+            "Vychlazene maslo nakrajet na kosticky, pridat ostatni suroviny a vypracovat pevne testo. Testo nechat odpocivat v lednicce. Pote z testa vyvalet silny valecek, nakrajet ho na kousky a ty potom tvarovat jako rohlicky. Troubu predehrat na 180 stupnu. Rohlicky pect 12-15 minut. Po upeceni nechat kratce zchladnout. Pote je obalit ve smesi mouckoveho a vanilkoveho cukru."
 
         );
        

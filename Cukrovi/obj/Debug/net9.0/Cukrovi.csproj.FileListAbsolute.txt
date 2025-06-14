@@ -12,3 +12,4 @@ C:\Users\mikul\Desktop\zaverecnyProjekt\Cukrovi\obj\Debug\net9.0\refint\Cukrovi.
 C:\Users\mikul\Desktop\zaverecnyProjekt\Cukrovi\obj\Debug\net9.0\Cukrovi.pdb
 C:\Users\mikul\Desktop\zaverecnyProjekt\Cukrovi\obj\Debug\net9.0\Cukrovi.genruntimeconfig.cache
 C:\Users\mikul\Desktop\zaverecnyProjekt\Cukrovi\obj\Debug\net9.0\ref\Cukrovi.dll
+C:\Users\mikul\Desktop\zaverecnyProjekt\Cukrovi\obj\Debug\net9.0\Cukrovi.sourcelink.json
