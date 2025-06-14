@@ -3,15 +3,23 @@ using Microsoft.VisualBasic;
 
 namespace Cukrovi;
 
-public class Zasoba
+public class Zasoba : ISurovina
 {
-    public string Surovina { get; set; }
-    public int Mnozstvi { get; set; }
-List<Zasoba> zasoby = new List<Zasoba>() { };
-}
+    public Zasoba(string jmeno, double mnozstvi, string jednotky)
+    {
+        Jmeno = jmeno;
+        Mnozstvi = mnozstvi;
+        Jednotky = jednotky;
+    }
 
+    public string Jmeno { get; set; }
+    public double Mnozstvi { get; set; }
     
-        
+    public string Jednotky { get; set; }
+
+    public string Druh { get; set; }
+
+}      
 
 
  

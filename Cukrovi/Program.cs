@@ -33,7 +33,7 @@ class Program
         );
         Recept pracny = new Recept
         (   "Pracny",
-            "225 g masla, 70 g cukr moucka, 225 g hladka mouka, 50 g mletych orechu, 2 hrebicky, 0.5 lzicky skorice, 0.5 lzice kakaa",
+            "225g masla, 70g cukr moucka, 225g hladka mouka, 50g mletych orechu, 2 hrebicky, 0.5 lzicky skorice, 0.5 lzice kakaa",
             "Prisady zpracovat na pevne testo a polovinu obarvit kakaem. Nechat odpocinout v lednicce. Troubu predehrat na 170 stupnu. Potom vytlacit do formicek. Pect zhruba 5-7 minut. Po upeceni vyklepnout z formicek."
 
         );
@@ -43,6 +43,20 @@ class Program
             "Vychlazene maslo nakrajet na kosticky, pridat ostatni suroviny a vypracovat pevne testo. Testo nechat odpocivat v lednicce. Pote z testa vyvalet silny valecek, nakrajet ho na kousky a ty potom tvarovat jako rohlicky. Troubu predehrat na 180 stupnu. Rohlicky pect 12-15 minut. Po upeceni nechat kratce zchladnout. Pote je obalit ve smesi mouckoveho a vanilkoveho cukru."
 
         );
+
+        var zasoby = new List<Zasoba>
+        {   new Zasoba ("mouka", 1000, "g"),
+            new Zasoba ("cukr krystal", 1000, "g"),
+            new Zasoba ("cukr moucka", 1000, "g" ),
+            new Zasoba ("kakao", 250, "g"),
+            new Zasoba ("maslo",250, "g"),
+            new Zasoba ("vejce", 12, "ks"),
+            new Zasoba ("orechy", 100, "g"),
+            new Zasoba ( "marmelada",250, "g" ),
+            new Zasoba ("hrebicek", 20, "ks"),
+            new Zasoba ("skorice", 10, "g" ),
+            new Zasoba ("vanilkovy cukr", 100, "g" )
+        };
        
 
         Console.WriteLine("Vyber akci:");
@@ -89,6 +103,12 @@ class Program
             case "2":
                 {
                     Console.WriteLine("Mate doma tyto suroviny:");
+                    foreach (var polozka in zasoby)
+                    {
+                        Console.WriteLine($"{polozka.Mnozstvi} {polozka.Jednotky} {polozka.Jmeno}");
+            
+
+                        }
                     
                     break;
                     }

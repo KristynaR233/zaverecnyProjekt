@@ -4,16 +4,14 @@ namespace Cukrovi;
 
 public interface ISurovina
 {
-    public string Jmeno { get; set; }
-    public double Mnozsti { get; set; }
+    string Jmeno { get; set; }
+    double Mnozstvi { get; set; }
 
-    public enum Jednotky
-    { g, ml, lzicka, lzice, kus }
+    string Jednotky { get; set; }
+    
 
-    public enum Druh
-    {
-       mouka, cukrKrystal, cukrMoucka, kakao, maslo, vejce, orechy, mamelada, hrebicek, skorice, vanilkovyCukr
-    }
+    string Druh { get; set; }
+  
     
 
 }
