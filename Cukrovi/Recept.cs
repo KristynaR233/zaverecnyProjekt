@@ -19,8 +19,14 @@ public class Recept
     
     public void VypisRecept()
     {
-        Console.WriteLine($"**{Nazev}**");
-        Console.WriteLine($"Seznam surovin: {Suroviny.Split(",")}");
+        Console.WriteLine($"** {Nazev} **");
+        Console.WriteLine("Seznam surovin:");
+        List<string> vypisSurovin = Suroviny.Trim().Split(",").ToList();
+        foreach (string seznam in vypisSurovin)
+        {
+            Console.WriteLine($"{seznam}");
+        }
+        Console.WriteLine("Postup:");
         List<string> postupVRadkach = Postup.Split(".").ToList();
         foreach (string polozka in postupVRadkach)
         {

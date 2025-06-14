@@ -20,7 +20,7 @@ class Program
      Recept lineckeCukrovi = new Recept
      ( "Linecke cukrovi",
        "140 g masla, 70 g cukr moucka, 210 g hladka mouka, 2 vejce, marmelada",
-       "Mouku prosijte na val, pridejte cukr, maslo, zloutky. Co nejrychleji zpracovat testo a dat do lednicky. Troubu predehrat na 180stupnu. Z testa vyvalet plat silny cca 2mm. Vykrajovat kolecka, do poloviny vykrojit prazdny stred a nezme je prenaset na plech. Pect cca 5 minut. Vychladle cukrovi slepit marmeladou."
+       "Mouku prosit na val, pridat cukr, maslo, zloutky. Co nejrychleji zpracovat testo a dat do lednicky. Troubu predehrat na 180stupnu. Z testa vyvalet plat silny cca 2mm. Vykrajovat kolecka, do poloviny vykrojit prazdny stred a opatrne je prenaset na plech. Pect cca 5 minut. Vychladle cukrovi slepit marmeladou."
 
      );
 
@@ -32,7 +32,7 @@ class Program
 
         );
         Recept pracny = new Recept
-        ( "Pracny",
+        (   "Pracny",
             "225 g masla, 70 g cukr moucka, 225 g hladka mouka, 50 g mletych orechu, 2 hrebicky, 0.5 lzicky skorice, 0.5 lzice kakaa",
             "Prisady zpracovat na pevne testo a polovinu obarvit kakaem. Nechat odpocinout v lednicce. Troubu predehrat na 170 stupnu. Potom vytlacit do formicek. Pect zhruba 5-7 minut. Po upeceni vyklepnout z formicek."
 
