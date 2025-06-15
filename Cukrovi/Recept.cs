@@ -2,13 +2,18 @@ using System;
 
 namespace Cukrovi;
 
-public class Recept
+public class Recept : ISurovina
 {
     public string Nazev { get; set; }
-    public string Suroviny { get; set; }
+    public PouziteSuroviny (string jmeno, double mnozstvi, string jednotky);
+    {
+        Jmeno = jmeno;
+        Mnozstvi = mnozstvi;
+        Jednotky = jednotky;
+    }
     public string Postup { get; set; }
 
-    public Recept(string nazev, string suroviny, string postup)
+    public Recept(string nazev, List<ISurovina> suroviny, string postup)
     {
         Nazev = nazev;
         Suroviny = suroviny;
