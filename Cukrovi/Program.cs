@@ -14,7 +14,15 @@ class Program
         string jmeno = Console.ReadLine();
         DateTime stedryDen = new DateTime(2025, 12, 24);
         TimeSpan pocetDniDoVanoc = stedryDen - DateTime.Now;
-        Console.WriteLine($"Ahoj {jmeno}, do Vanoc zbyva {pocetDniDoVanoc.Days} dni. Je cas zacit pect cukrovi.");
+        Console.WriteLine($"Ahoj {jmeno}, do Vanoc zbyva {pocetDniDoVanoc.Days} dni.");
+        if (pocetDniDoVanoc.Days < 21)
+        {
+            Console.WriteLine("Je nejvyssi cas zacit pect cukrovi!");
+        }
+        else
+        {
+            Console.WriteLine("Do Vanoc casu dost, ale stejne si muzes projit recepty na cukrovi ;)");
+        }
 
 
 
@@ -58,8 +66,8 @@ class Program
                 new Surovina("hladka mouka", 225, "g"),
                 new Surovina ("mlete orechy", 50, "g"),
                 new Surovina("hrebicky", 2, "ks"),
-                new Surovina("skorice", 1/2, "lzicky"),
-                new Surovina ("kakao", 1/2, "lzice"),
+                new Surovina("skorice", 1, "kavova lzicka"),
+                new Surovina ("kakao", 1, "lzice"),
 
             };
         Recept vanilkoveRohlicky = new Recept
