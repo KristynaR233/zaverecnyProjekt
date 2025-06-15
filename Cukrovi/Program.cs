@@ -27,7 +27,7 @@ class Program
 
 
         Recept lineckeCukrovi = new Recept
-        (   "Linecke cukrovi",
+        ("Linecke cukrovi",
             "Mouku prosit na val, pridat cukr, maslo, zloutky. Co nejrychleji zpracovat testo a dat do lednicky. Troubu predehrat na 180stupnu. Z testa vyvalet plat silny cca 2mm. Vykrajovat kolecka, do poloviny vykrojit prazdny stred a opatrne je prenaset na plech. Pect cca 5 minut. Vychladle cukrovi slepit marmeladou."
              );
         lineckeCukrovi.Suroviny = new List<ISurovina>()
@@ -47,7 +47,7 @@ class Program
 
         );
         muslicky.Suroviny = new List<ISurovina>()
-        {new Surovina ("maslo", 250, "g"),
+                {new Surovina ("maslo", 250, "g"),
                 new Surovina ("cukr moucka", 250, "g"),
                 new Surovina("hladka mouka", 250, "g"),
                 new Surovina ("vejce", 2, "ks" ),
@@ -55,7 +55,7 @@ class Program
 
         };
         Recept pracny = new Recept
-        (   "Pracny",
+        ("Pracny",
             "Prisady zpracovat na pevne testo a polovinu obarvit kakaem. Nechat odpocinout v lednicce. Troubu predehrat na 170 stupnu. Potom vytlacit do formicek. Pect zhruba 5-7 minut. Po upeceni vyklepnout z formicek."
 
         );
@@ -71,8 +71,8 @@ class Program
 
             };
         Recept vanilkoveRohlicky = new Recept
-        (   "Vanilkove rohlicky",
-            "Vychlazene maslo nakrajet na kosticky, pridat ostatni suroviny a vypracovat pevne testo. Testo nechat odpocivat v lednicce. Pote z testa vyvalet silny valecek, nakrajet ho na kousky a ty potom tvarovat jako rohlicky. Troubu predehrat na 180 stupnu. Rohlicky pect 12-15 minut. Po upeceni nechat kratce zchladnout. Pote je obalit ve smesi mouckoveho a vanilkoveho cukru."
+        ("Vanilkove rohlicky",
+        "Vychlazene maslo nakrajet na kosticky, pridat ostatni suroviny a vypracovat pevne testo. Testo nechat odpocivat v lednicce. Pote z testa vyvalet silny valecek, nakrajet ho na kousky a ty potom tvarovat jako rohlicky. Troubu predehrat na 180 stupnu. Rohlicky pect 12-15 minut. Po upeceni nechat kratce zchladnout. Pote je obalit ve smesi mouckoveho a vanilkoveho cukru."
 
         );
         vanilkoveRohlicky.Suroviny = new List<ISurovina>
@@ -98,7 +98,7 @@ class Program
             new Zasoba ("skorice", 10, "g" ),
             new Zasoba ("vanilkovy cukr", 100, "g" )
         };
-       
+
 
         Console.WriteLine("Vyber akci:");
         Console.WriteLine("1-zobrazit recepty");
@@ -108,37 +108,54 @@ class Program
         {
             case "1":
                 {
-                    Console.WriteLine("Vyber cislo receptu, ktery chces zobrazit:");
+                    Console.WriteLine("Vyber cislo receptu, ktery chces zobrazit a pocet davek, ktery chces upect:");
                     Console.WriteLine("1- vanilkove rohlicky");
                     Console.WriteLine("2- linecke");
                     Console.WriteLine("3- pracny");
                     Console.WriteLine("4- muslicky s orechovou naplni");
-                    string vyberReceptu = Console.ReadLine();
-                    switch (vyberReceptu)
+                    string[] vyberReceptuADavek = Console.ReadLine().Split(";");
+                    string davkyOdUzivatele = vyberReceptuADavek[1];
+                    double pocetDavek;
+                    bool povedloSePrevest = double.TryParse(davkyOdUzivatele, out pocetDavek);
                     {
-                        case "1":
-                            {
-                                vanilkoveRohlicky.VypisRecept();
-                                break;
-                            }
-                        case "2":
-                            {
-                                lineckeCukrovi.VypisRecept();
-                                break;
-                            }
-                        case "3":
-                            {
-                                pracny.VypisRecept();
-                                break;
-                            }
-                        case "4":
-                            {
-                                muslicky.VypisRecept();
-                                break;
+                        while (!povedloSePrevest || pocetDavek <= 0)
+                        {
+                            Console.WriteLine("Nebylo zadano kladne cislo. Zadejte pocet davek znovu:");
+                            davkyOdUzivatele = Console.ReadLine();
+                            povedloSePrevest = double.TryParse(davkyOdUzivatele, out pocetDavek);
                         }
-                        
-                        
+                        foreach (var noveMnozstvi in Surovina)
+                        {
+                           return noveMnozstvi =  mnozstvi * pocetDavek;
+                        }
+
                     }
+
+                    switch (vyberReceptuADavek[0])
+                        {
+                            case "1":
+                                {
+                                    vanilkoveRohlicky.VypisRecept();
+                                    break;
+                                }
+                            case "2":
+                                {
+                                    lineckeCukrovi.VypisRecept();
+                                    break;
+                                }
+                            case "3":
+                                {
+                                    pracny.VypisRecept();
+                                    break;
+                                }
+                            case "4":
+                                {
+                                    muslicky.VypisRecept();
+                                    break;
+                                }
+
+
+                        }
                     break;
                 }
             case "2":
@@ -148,14 +165,16 @@ class Program
                     {
                         Console.WriteLine($"{polozka.Mnozstvi} {polozka.Jednotky} {polozka.Jmeno}");
 
-                        }
-                    
-                    break;
                     }
 
+                    break;
+                }
+           
+
+                }
+
+
+
         }
-
-
-
     }
-}
+
