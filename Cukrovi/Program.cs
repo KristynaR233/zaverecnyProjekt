@@ -20,64 +20,62 @@ class Program
 
         Recept lineckeCukrovi = new Recept
         (   "Linecke cukrovi",
-            var suroviny = new List<ISuroviny> 
-           { 
-             new ("maslo", 140, "g"),
-             new ("cukr moucka", 70, "g"),
-             new ("hladka mouka", 210, "g"),
-             new  ("vejce", 2, "ks" ),
-             new  ("marmelada", 100, "g")
+            "Mouku prosit na val, pridat cukr, maslo, zloutky. Co nejrychleji zpracovat testo a dat do lednicky. Troubu predehrat na 180stupnu. Z testa vyvalet plat silny cca 2mm. Vykrajovat kolecka, do poloviny vykrojit prazdny stred a opatrne je prenaset na plech. Pect cca 5 minut. Vychladle cukrovi slepit marmeladou."
+             );
+        lineckeCukrovi.Suroviny = new List<ISurovina>()
+           {
+             new Surovina("maslo", 140, "g"),
+             new Surovina ("cukr moucka", 70, "g"),
+             new Surovina("hladka mouka", 210, "g"),
+             new Surovina ("vejce", 2, "ks" ),
+             new Surovina ("marmelada", 100, "g")
 
-           },
-       "Mouku prosit na val, pridat cukr, maslo, zloutky. Co nejrychleji zpracovat testo a dat do lednicky. Troubu predehrat na 180stupnu. Z testa vyvalet plat silny cca 2mm. Vykrajovat kolecka, do poloviny vykrojit prazdny stred a opatrne je prenaset na plech. Pect cca 5 minut. Vychladle cukrovi slepit marmeladou."
-
-     );
+           };
 
         Recept muslicky = new Recept
         (
             "Muslicky s orechovou naplni",
-            var suroviny = new List<ISuroviny>
-            {
-                new ("maslo", 250, "g"),
-                new ("cukr moucka", 250, "g"),
-                new ("hladka mouka", 250, "g"),
-                new  ("vejce", 2, "ks" ),
-                new  ("mlete orechy", 100, "g")
-                
-            },
             "Smichat mouku, maslo, 1 vejce a 1 lzici vody a vypracovat hladke testo. Nechat odpocinout v lednici. Na napln smichat mlete orechy, 100g mouckoveho cukru a 1 vejce. Predehrat troubu na 180 stupnu. Z testa vyvalet plat cca 2 mm silny a vykrajet kolecka. Na kazde kolecko dat trochu naplne a prelozit napul. Muslicky prenest na plech a pect cca 10 minut do svetle zlate barvy. Jeste horke obalit v mouckovem cukru."
 
         );
+        muslicky.Suroviny = new List<ISurovina>()
+        {new Surovina ("maslo", 250, "g"),
+                new Surovina ("cukr moucka", 250, "g"),
+                new Surovina("hladka mouka", 250, "g"),
+                new Surovina ("vejce", 2, "ks" ),
+                new Surovina ("mlete orechy", 100, "g")
+
+        };
         Recept pracny = new Recept
         (   "Pracny",
-            var suroviny = new List<ISuroviny>
-            {
-                new PouziteSuroviny ("maslo", 225, "g"),
-                new ("cukr moucka", 70, "g"),
-                new ("hladka mouka", 225, "g"),
-                new  ("mlete orechy", 50, "g"),
-                new  ("hrebicky", 2, "ks"),
-                new  ("skorice", 0.5, "lzicky"),
-                new  ("kakao", 0,5, "lzice"),
-                
-            },
             "Prisady zpracovat na pevne testo a polovinu obarvit kakaem. Nechat odpocinout v lednicce. Troubu predehrat na 170 stupnu. Potom vytlacit do formicek. Pect zhruba 5-7 minut. Po upeceni vyklepnout z formicek."
 
         );
+        pracny.Suroviny = new List<ISurovina>()
+            {
+                new Surovina ("maslo", 225, "g"),
+                new Surovina ("cukr moucka", 70, "g"),
+                new Surovina("hladka mouka", 225, "g"),
+                new Surovina ("mlete orechy", 50, "g"),
+                new Surovina("hrebicky", 2, "ks"),
+                new Surovina("skorice", 1/2, "lzicky"),
+                new Surovina ("kakao", 1/2, "lzice"),
+
+            };
         Recept vanilkoveRohlicky = new Recept
         (   "Vanilkove rohlicky",
-             var suroviny = new List<ISuroviny>
-            {
-                new ("maslo", 170, "g"),
-                new ("cukr moucka", 50, "g"),
-                new ("hladka mouka", 210, "g"),
-                new  ("mlete orechy", 80, "g"),
-                new  ("vanilkovy cukr", 20, "g"),
-                
-             },
             "Vychlazene maslo nakrajet na kosticky, pridat ostatni suroviny a vypracovat pevne testo. Testo nechat odpocivat v lednicce. Pote z testa vyvalet silny valecek, nakrajet ho na kousky a ty potom tvarovat jako rohlicky. Troubu predehrat na 180 stupnu. Rohlicky pect 12-15 minut. Po upeceni nechat kratce zchladnout. Pote je obalit ve smesi mouckoveho a vanilkoveho cukru."
 
         );
+        vanilkoveRohlicky.Suroviny = new List<ISurovina>
+            {
+                new Surovina ("maslo", 170, "g"),
+                new Surovina ("cukr moucka", 50, "g"),
+                new Surovina("hladka mouka", 210, "g"),
+                new Surovina ("mlete orechy", 80, "g"),
+                new Surovina ("vanilkovy cukr", 20, "g"),
+
+             };
 
         var zasoby = new List<Zasoba>
         {   new Zasoba ("mouka", 1000, "g"),
