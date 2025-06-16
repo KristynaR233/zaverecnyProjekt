@@ -5,7 +5,7 @@ namespace Cukrovi;
 
 public class Zasoba : ISurovina
 {
-    public Zasoba(string jmeno, decimal mnozstvi, string jednotky)
+    public Zasoba(string jmeno, double mnozstvi, string jednotky)
     {
         Jmeno = jmeno;
         Mnozstvi = mnozstvi;
@@ -13,7 +13,7 @@ public class Zasoba : ISurovina
     }
 
     public string Jmeno { get; set; }
-    public decimal Mnozstvi { get; set; }
+    public double Mnozstvi { get; set; }
     
     public string Jednotky { get; set; }
 

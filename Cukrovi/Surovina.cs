@@ -5,18 +5,21 @@ namespace Cukrovi;
 public class Surovina : ISurovina
 {
     public string Jmeno { get; }
-	public decimal Mnozstvi { get; set; }
+    public double Mnozstvi { get; set; }
     public string Jednotky { get; set; }
     public string Druh { get; set; }
-   
 
-    public Surovina (string jmeno, decimal mnozstvi, string jednotky)
+
+    public Surovina(string jmeno, double mnozstvi, string jednotky)
     {
         Jmeno = jmeno;
         Mnozstvi = mnozstvi;
         Jednotky = jednotky;
         
+
     }
-	
+
+  
+    
 
 }

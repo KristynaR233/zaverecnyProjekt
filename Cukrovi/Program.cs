@@ -6,6 +6,7 @@ namespace Cukrovi;
 
 class Program
 {
+   
     static void Main(string[] args)
     {
         string pomlcky = new string('-', 20);
@@ -25,18 +26,17 @@ class Program
         }
 
 
-
-        Recept lineckeCukrovi = new Recept
-        ("Linecke cukrovi",
-            "Mouku prosit na val, pridat cukr, maslo, zloutky. Co nejrychleji zpracovat testo a dat do lednicky. Troubu predehrat na 180stupnu. Z testa vyvalet plat silny cca 2mm. Vykrajovat kolecka, do poloviny vykrojit prazdny stred a opatrne je prenaset na plech. Pect cca 5 minut. Vychladle cukrovi slepit marmeladou."
-             );
-        lineckeCukrovi.Suroviny = new List<ISurovina>()
+    Recept lineckeCukrovi = new Recept
+    ("Linecke cukrovi",
+        "Mouku prosit na val, pridat cukr, maslo, zloutky. Co nejrychleji zpracovat testo a dat do lednicky. Troubu predehrat na 180stupnu. Z testa vyvalet plat silny cca 2mm. Vykrajovat kolecka, do poloviny vykrojit prazdny stred a opatrne je prenaset na plech. Pect cca 5 minut. Vychladle cukrovi slepit marmeladou."
+         );
+    lineckeCukrovi.Suroviny = new List<ISurovina>()
            {
              new Surovina("maslo", 140, "g"),
-             new Surovina ("cukr moucka", 70, "g"),
+             new Surovina("cukr moucka", 70, "g"),
              new Surovina("hladka mouka", 210, "g"),
-             new Surovina ("vejce", 2, "ks" ),
-             new Surovina ("marmelada", 100, "g")
+             new Surovina("vejce", 2, "ks" ),
+             new Surovina("marmelada", 100, "g")
 
            };
 
@@ -84,20 +84,22 @@ class Program
                 new Surovina ("vanilkovy cukr", 20, "g"),
 
              };
+        
 
-        var zasoby = new List<Zasoba>
-        {   new Zasoba ("mouka", 1000, "g"),
-            new Zasoba ("cukr krystal", 1000, "g"),
-            new Zasoba ("cukr moucka", 1000, "g" ),
-            new Zasoba ("kakao", 250, "g"),
-            new Zasoba ("maslo",250, "g"),
-            new Zasoba ("vejce", 12, "ks"),
-            new Zasoba ("orechy", 100, "g"),
-            new Zasoba ( "marmelada",250, "g" ),
-            new Zasoba ("hrebicek", 20, "ks"),
-            new Zasoba ("skorice", 10, "g" ),
-            new Zasoba ("vanilkovy cukr", 100, "g" )
+        var zasoby = new List<ISurovina>
+        {   new Surovina("mouka", 1000, "g"),
+            new Surovina("cukr krystal", 1000, "g"),
+            new Surovina("cukr moucka", 1000, "g"),
+            new Surovina("kakao", 250, "g"),
+            new Surovina("maslo", 250, "g"),
+            new Surovina("vejce", 12, "ks"),
+            new Surovina("orechy", 100, "g"),
+            new Surovina("marmelada", 250, "g"),
+            new Surovina("hrebicek", 20, "ks"),
+            new Surovina("skorice", 10, "g"),
+            new Surovina("vanilkovy cukr", 100, "g")
         };
+
 
 
         Console.WriteLine("Vyber akci:");
@@ -108,54 +110,38 @@ class Program
         {
             case "1":
                 {
-                    Console.WriteLine("Vyber cislo receptu, ktery chces zobrazit a pocet davek, ktery chces upect:");
+                    Console.WriteLine("Vyber cislo receptu, ktery chces zobrazit:");
                     Console.WriteLine("1- vanilkove rohlicky");
                     Console.WriteLine("2- linecke");
                     Console.WriteLine("3- pracny");
                     Console.WriteLine("4- muslicky s orechovou naplni");
-                    string[] vyberReceptuADavek = Console.ReadLine().Split(";");
-                    string davkyOdUzivatele = vyberReceptuADavek[1];
-                    double pocetDavek;
-                    bool povedloSePrevest = double.TryParse(davkyOdUzivatele, out pocetDavek);
+                    string vyberReceptu = Console.ReadLine();
+
+                    switch (vyberReceptu)
                     {
-                        while (!povedloSePrevest || pocetDavek <= 0)
-                        {
-                            Console.WriteLine("Nebylo zadano kladne cislo. Zadejte pocet davek znovu:");
-                            davkyOdUzivatele = Console.ReadLine();
-                            povedloSePrevest = double.TryParse(davkyOdUzivatele, out pocetDavek);
-                        }
-                        foreach (var noveMnozstvi in Surovina)
-                        {
-                           return noveMnozstvi =  mnozstvi * pocetDavek;
-                        }
+                        case "1":
+                            {
+                                vanilkoveRohlicky.VypisRecept();
+                                break;
+                            }
+                        case "2":
+                            {
+                                lineckeCukrovi.VypisRecept();
+                                break;
+                            }
+                        case "3":
+                            {
+                                pracny.VypisRecept();
+                                break;
+                            }
+                        case "4":
+                            {
+                                muslicky.VypisRecept();
+                                break;
+                            }
+
 
                     }
-
-                    switch (vyberReceptuADavek[0])
-                        {
-                            case "1":
-                                {
-                                    vanilkoveRohlicky.VypisRecept();
-                                    break;
-                                }
-                            case "2":
-                                {
-                                    lineckeCukrovi.VypisRecept();
-                                    break;
-                                }
-                            case "3":
-                                {
-                                    pracny.VypisRecept();
-                                    break;
-                                }
-                            case "4":
-                                {
-                                    muslicky.VypisRecept();
-                                    break;
-                                }
-
-
-                        }
                     break;
                 }
             case "2":
@@ -168,7 +154,11 @@ class Program
                     }
 
                     break;
-                }
+                
+
+              }
+
+
            
 
                 }
