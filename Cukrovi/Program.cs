@@ -114,9 +114,9 @@ class Program
             Console.WriteLine("2-zobrazit zasoby");
             Console.WriteLine("3 - ukonceni programu");
             int vstupUzivatele = int.Parse(Console.ReadLine());
-            while ((vstupUzivatele == 1 || vstupUzivatele == 2) == false)
+            while ((vstupUzivatele == 1 || vstupUzivatele == 2 || vstupUzivatele == 3) == false)
             {
-                Console.WriteLine("Nebylo zadáno císlo 1 nebo 2 pro vyber akce. Opakuj vyber:");
+                Console.WriteLine("Nebylo zadáno platne cislo pro vyber akce. Opakuj vyber:");
                 vstupUzivatele = int.Parse(Console.ReadLine());
 
             }
@@ -143,6 +143,7 @@ class Program
                             case 1:
                                 {
                                     vanilkoveRohlicky.VypisRecept();
+                                
                                     break;
                                 }
                             case 2:
