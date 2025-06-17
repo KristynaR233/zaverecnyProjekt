@@ -6,13 +6,19 @@ namespace Cukrovi;
 
 class Program
 {
-   
+
     static void Main(string[] args)
     {
         string pomlcky = new string('-', 20);
         Console.WriteLine(pomlcky + "ZAVERECNY PROJEKT" + pomlcky);
         Console.WriteLine("Uzivateli, zadej sve jmeno:");
         string jmeno = Console.ReadLine();
+        if (String.IsNullOrEmpty(jmeno))
+        {
+            throw new ArgumentException("Uzivateli, nezadal jsi jmeno.");
+        }
+        
+        
         DateTime stedryDen = new DateTime(2025, 12, 24);
         TimeSpan pocetDniDoVanoc = stedryDen - DateTime.Now;
         Console.WriteLine($"Ahoj {jmeno}, do Vanoc zbyva {pocetDniDoVanoc.Days} dni.");
@@ -25,12 +31,12 @@ class Program
             Console.WriteLine("Do Vanoc casu dost, ale stejne si muzes projit recepty na cukrovi ;)");
         }
 
-
+     
     Recept lineckeCukrovi = new Recept
     ("Linecke cukrovi",
         "Mouku prosit na val, pridat cukr, maslo, zloutky. Co nejrychleji zpracovat testo a dat do lednicky. Troubu predehrat na 180stupnu. Z testa vyvalet plat silny cca 2mm. Vykrajovat kolecka, do poloviny vykrojit prazdny stred a opatrne je prenaset na plech. Pect cca 5 minut. Vychladle cukrovi slepit marmeladou."
          );
-    lineckeCukrovi.Suroviny = new List<ISurovina>()
+    lineckeCukrovi.Suroviny= new List<ISurovina>()
            {
              new Surovina("maslo", 140, "g"),
              new Surovina("cukr moucka", 70, "g"),
@@ -105,36 +111,49 @@ class Program
         Console.WriteLine("Vyber akci:");
         Console.WriteLine("1-zobrazit recepty");
         Console.WriteLine("2-zobrazit zasoby");
-        string vstupUzivatele = Console.ReadLine();
+        int vstupUzivatele = int.Parse(Console.ReadLine());
+        while ((vstupUzivatele == 1 || vstupUzivatele == 2)== false)
+        {
+            Console.WriteLine("Nebylo zadáno císlo 1 nebo 2 pro vyber akce. Opakuj vyber:");
+            vstupUzivatele = int.Parse(Console.ReadLine());
+
+        }
+       
         switch (vstupUzivatele)
         {
-            case "1":
+            case 1:
                 {
                     Console.WriteLine("Vyber cislo receptu, ktery chces zobrazit:");
                     Console.WriteLine("1- vanilkove rohlicky");
                     Console.WriteLine("2- linecke");
                     Console.WriteLine("3- pracny");
                     Console.WriteLine("4- muslicky s orechovou naplni");
-                    string vyberReceptu = Console.ReadLine();
+                    int vyberReceptu = int.Parse(Console.ReadLine());             
+                 while (vyberReceptu < 1 || vyberReceptu > 4)
+             {  
+                Console.WriteLine("Nebylo zadáno platne cislo receptu. Opakuj vyber:");
+                vyberReceptu = int.Parse(Console.ReadLine());
+
+                }
 
                     switch (vyberReceptu)
                     {
-                        case "1":
+                        case 1:
                             {
                                 vanilkoveRohlicky.VypisRecept();
                                 break;
                             }
-                        case "2":
+                        case 2:
                             {
                                 lineckeCukrovi.VypisRecept();
                                 break;
                             }
-                        case "3":
+                        case 3:
                             {
                                 pracny.VypisRecept();
                                 break;
                             }
-                        case "4":
+                        case 4:
                             {
                                 muslicky.VypisRecept();
                                 break;
@@ -144,7 +163,7 @@ class Program
                     }
                     break;
                 }
-            case "2":
+            case 2:
                 {
                     Console.WriteLine("Mate doma tyto suroviny:");
                     foreach (var polozka in zasoby)
@@ -154,14 +173,14 @@ class Program
                     }
 
                     break;
-                
 
-              }
-
-
-           
 
                 }
+
+
+
+
+        }
 
 
 
